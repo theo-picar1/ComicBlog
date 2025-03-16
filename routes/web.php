@@ -28,6 +28,6 @@ Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/comics', [ComicController::class, 'index'])->name('comics.index');
+Route::get('/', [ComicController::class, 'index'])->name('comics.index');
 Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');
 
