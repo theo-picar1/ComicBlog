@@ -32,7 +32,7 @@
                         <h1>{{ $comic->title }}</h1>
                         <p>{{ Str::limit($comic->description, 300) }}</p>
                     </div>
-                    <a class="continue-reading-link">Continue Reading...</a>
+                    <a class="continue-reading-link" href="{{ route('comics.show', $comic->id) }}">Continue Reading...</a>
                     <div class="comic-footer">
                         <div class="comments">
                             <img src="{{ asset('images/comment-icon.png') }}" />
