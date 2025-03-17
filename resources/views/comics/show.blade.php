@@ -16,9 +16,21 @@
                     <h2 class="text-2xl font-semibold mb-3">{{ $comic->comment_count }} Comments</h2>
                     
                     @if (!empty($comic->comments) && count($comic->comments) > 0)
-                        <div>
+                        <div class="comment-section">
                             @foreach ($comic->comments as $comment)
-                                <li class="bg-gray-100 p-2 rounded-md mb-2">{{ $comment->content }}</li>
+                                <div class="user-comment">
+                                    <img class="w-8 h-auto" src="{{ asset('images/user-icon.png') }}"/>
+                                    <div class="right-section w-auto">
+                                        <p class="text-xs font-bold inline">@username</p>
+                                        <span class="text-xs">{{ $comment->created_at }}</span>
+                                        <p class="mt-2 text-s">{{ $comment->content }}</p>
+                                        <div class="like-dislike-section mt-2">
+                                            <img class="w-5 h-auto" src="{{ asset('images/like-icon.png') }}"/>
+                                            <span class="text-s">0</span>
+                                            <img class="w-5 h-auto ml-5" src="{{ asset('images/dislike-icon.png') }}"/>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
                         </div>
                     @else

@@ -118,3 +118,33 @@
     border-radius: 10px;
     background-color: lightgray;
 }
+
+.view-comic-page .view-comic-content .send-comment-section .submit-button-container button:hover {
+    background-color: rgb(238, 238, 238);
+}
+
+.view-comic-page .view-comic-content .send-comment-section .submit-button-container button:active {
+    background-color: lightgray;
+    outline: none;
+}
+
+/* ...comment section */
+.view-comic-page .view-comic-content .comment-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.view-comic-page .view-comic-content .comment-section .user-comment {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.view-comic-page .view-comic-content .comment-section .user-comment .right-section .like-dislike-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
