@@ -16,11 +16,11 @@
                     <h2 class="text-2xl font-semibold mb-3">{{ $comic->comment_count }} Comments</h2>
                     
                     @if (!empty($comic->comments) && count($comic->comments) > 0)
-                        <ul class="list-disc list-inside">
+                        <div>
                             @foreach ($comic->comments as $comment)
-                                <li class="bg-gray-100 p-2 rounded-md mb-2">{{ $comment }}</li>
+                                <li class="bg-gray-100 p-2 rounded-md mb-2">{{ $comment->content }}</li>
                             @endforeach
-                        </ul>
+                        </div>
                     @else
                         <p class="text-gray-500">No comments yet. Be the first to comment!</p>
                     @endif
@@ -29,13 +29,15 @@
                 <div class="mt-4 send-comment-section">
                     <h2 class="text-2xl font-semibold mb-3">Leave a Comment</h2>
 
-                    <div class="type-comment">
-                        <textarea placeholder="Type your comment here..."></textarea>
-                    </div>
-
-                    <div class="submit-button-container py-4 px-3 border-solid border-r border-b border-l border-black">
-                        <button>Send Comment</button>
-                    </div>
+                    <form action="{{ route('comments.store', $comic->id) }}" method="POST">
+                        @csrf
+                        <div class="type-comment">
+                            <textarea name="content" placeholder="Type your comment here..." required></textarea>
+                        </div>
+                        <div class="submit-button-container py-4 px-3 border-solid border-r border-b border-l border-black">
+                            <button>Send Comment</button>
+                        </div>
+                    </form>
                 </div>
 
                 <div class="mt-10 text-right">

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ComicController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,5 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 
 Route::get('/', [ComicController::class, 'index'])->name('comics.index');
 Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');
+Route::post('/comics/{comic}/comments', [CommentController::class, 'store'])->name('comments.store');
 
