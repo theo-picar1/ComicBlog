@@ -1,21 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mx-auto py-10">
-        <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden">
-            <img class="w-full h-96 object-cover" src="{{ asset($comic->image_path) }}" alt="{{ $comic->title }}">
+    <div class="home-content py-8">
+        <div class="view-comic-page max-w-4xl m-auto bg-white h-auto pb-7 rounded-lg">
+            <h1 class="text-3xl font-bold py-12 text-center">{{ $comic->title }}</h1>
+            <img class="w-4/5 h-auto m-auto" src="{{ asset($comic->image_path) }}" alt="{{ $comic->title }}">
 
-            <div class="p-6">
-                <h1 class="text-3xl font-bold mb-4">{{ $comic->title }}</h1>
-                <p class="text-gray-700">{{ $comic->description }}</p>
+            <div class="view-comic-content w-10/12 m-auto m-top">
+                {{-- Reference: ChatGPT --}}
+                <p class="text-gray-700 text-lg py-6">
+                    {!! preg_replace('/((?:[^.]*\.){10})/', '$1</p><p class="text-gray-700 text-lg py-6">', e($comic->description)) !!}
+                </p>
 
-                <div class="mt-6 flex items-center">
-                    <img class="w-6 h-6 mr-2" src="{{ asset('images/comment-icon.png') }}" alt="Comments">
-                    <p class="text-gray-600">{{ $comic->comment_count }} Comments</p>
-                </div>
-
-                <div class="mt-6">
-                    <h2 class="text-2xl font-semibold mb-3">Comments</h2>
+                <div>
+                    <h2 class="text-2xl font-semibold mb-3">{{ $comic->comment_count }} Comments</h2>
                     
                     @if (!empty($comic->comments) && count($comic->comments) > 0)
                         <ul class="list-disc list-inside">
@@ -28,8 +26,20 @@
                     @endif
                 </div>
 
-                <div class="mt-6">
-                    <a href="{{ route('comics.index') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <div class="mt-4 send-comment-section">
+                    <h2 class="text-2xl font-semibold mb-3">Leave a Comment</h2>
+
+                    <div class="type-comment">
+                        <textarea placeholder="Type your comment here..."></textarea>
+                    </div>
+
+                    <div class="submit-button-container py-4 px-3 border-solid border-r border-b border-l border-black">
+                        <button>Send Comment</button>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-right">
+                    <a href="{{ route('comics.index') }}" class="text-red-600">
                         Back to Gallery
                     </a>
                 </div>

@@ -89,3 +89,32 @@
     width: 18px;
     height: auto;
 }
+
+/* VIEW COMIC PAGE */
+.view-comic-page .view-comic-content .send-comment-section .type-comment {
+    border: thin solid black;
+    padding: 12px;
+    height: 250px;
+}
+
+.view-comic-page .view-comic-content .send-comment-section .type-comment textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+}
+
+.view-comic-page .view-comic-content .send-comment-section .type-comment textarea:focus {
+    outline: none;
+}
+
+.view-comic-page .view-comic-content .send-comment-section .submit-button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.view-comic-page .view-comic-content .send-comment-section .submit-button-container button {
+    border: thin solid black;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background-color: lightgray;
+}
