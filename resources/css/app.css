@@ -148,3 +148,9 @@
     align-items: center;
     gap: 8px;
 }
+
+/* CREATE NEW COMIC (POST) PAGE CSS */
+.create-comic .create-form .description-section textarea {
+    resize: none;
+    height: 300px;
+}
