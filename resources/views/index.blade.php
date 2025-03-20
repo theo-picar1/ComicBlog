@@ -24,6 +24,7 @@
             </p>
         </div>
 
+        <a href="{{ route('comics.create') }}">Create post</a>
         <div class="comic-gallery grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             @foreach ($comics as $comic)
                 <div class="comic-container">
