@@ -9,7 +9,7 @@
                     {{ __('Create new post') }}
                 </header>
 
-                <form class="create-form w-full px-6 space-y-6 sm:px-10 sm:space-y-8">
+                <form action="{{ route('comics.store') }}" method="POST" class="create-form w-full px-6 space-y-6 sm:px-10 sm:space-y-8" enctype="multipart/form-data">
                     @csrf
 
                     <div class="flex flex-wrap">
@@ -19,7 +19,7 @@
 
                         <input id="title" type="text"
                             class="form-input w-full @error('title') border-red-500 @enderror" name="title"
-                            value="{{ old('title') }}" required autocomplete="title" autofocus>
+                            value="{{ old('title') }}" required autofocus>
 
                         @error('title')
                             <p class="text-red-500 text-xs italic mt-4">
@@ -33,7 +33,7 @@
                             {{ __('Blog image') }}:
                         </label>
 
-                        <input id="imageURL" type="text"
+                        <input id="imageURL" type="file"
                             class="form-input w-full @error('imageURL') border-red-500 @enderror" name="imageURL" required>
 
                         @error('imageURL')
@@ -49,7 +49,7 @@
                         </label>
 
                         <textarea id="description" class="form-input w-full @error('description') border-red-500 @enderror" name="description"
-                            value="{{ old('description') }}" required autocomplete="description" autofocus>
+                            value="{{ old('description') }}" required autofocus>
                         </textarea>
 
                         @error('description')

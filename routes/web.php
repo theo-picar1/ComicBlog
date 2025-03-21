@@ -33,4 +33,6 @@ Route::get('/', [ComicController::class, 'index'])->name('comics.index');
 Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');
 Route::get('/create', [ComicController::class, 'create'])->name('comics.create');
 
+// Create code
 Route::post('/comics/{comic}/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::post('/create', [ComicController::class, 'store'])->name('comics.store');
