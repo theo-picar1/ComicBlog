@@ -18,4 +18,27 @@ class ComicController extends Controller
         $comic = Comic::findOrFail($id);
         return view('comics.show', compact('comic'));
     }
+
+    public function create() {
+        return view('comics.create');
+    }
+
+    public function store(Request $request) {
+        $request->validate([
+            'title' => 'required|string|max:150',
+            'imageURL' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'description' => 'required|string'
+        ]);
+
+        $imagePath = $request->file('imageURL')->store('comics', 'public');
+
+        Comic::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'comment_count' => 0,
+            'image_path' => $imagePath
+        ]);
+
+        return redirect()->route('comics.index')->with('success', 'Comic post added successfully!');
+    }
 }
