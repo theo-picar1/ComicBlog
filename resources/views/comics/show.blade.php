@@ -46,9 +46,13 @@
                         <div class="type-comment">
                             <textarea name="content" placeholder="Type your comment here..." required></textarea>
                         </div>
-                        <div class="submit-button-container py-4 px-3 border-solid border-r border-b border-l border-black">
-                            <button>Send Comment</button>
-                        </div>
+                        @guest 
+                            <div class="submit-button-container py-4 px-3 border-solid border-r border-b border-l border-black">
+                                <button>Send Comment</button>
+                            </div>
+                        @else 
+                            <p>You must be logged in to comment!</p>
+                        @endguest
                     </form>
                 </div>
 
