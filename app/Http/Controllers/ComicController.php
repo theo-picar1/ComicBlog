@@ -26,7 +26,7 @@ class ComicController extends Controller
     public function store(Request $request) {
         $request->validate([
             'title' => 'required|string|max:150',
-            'imageURL' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'imageURL' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
             'description' => 'required|string'
         ]);
 

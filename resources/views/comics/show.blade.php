@@ -4,7 +4,7 @@
     <div class="home-content py-8">
         <div class="view-comic-page max-w-4xl m-auto bg-white h-auto pb-7 rounded-lg">
             <h1 class="text-3xl font-bold py-12 text-center">{{ $comic->title }}</h1>
-            <img class="w-4/5 h-auto m-auto" src="{{ asset($comic->image_path) }}" alt="{{ $comic->title }}">
+            <img class="w-4/5 h-auto m-auto" src="{{ asset('storage/' . $comic->image_path) }}" alt="{{ $comic->title }}">
 
             <div class="view-comic-content w-10/12 m-auto m-top">
                 {{-- Reference: ChatGPT --}}
