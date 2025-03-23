@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <div class="home-navbar bg-gray-800 text-white font-bold text-xl flex flex-row items-center justify-between px-16 py-8">
+    <div class="home-navbar bg-gray-800 text-white font-bold text-xl flex flex-row items-center justify-between px-16 py-8 overflow-x-scroll w-auto">
         <div class="flex flex-row items-center gap-8">
             <a class="cursor-pointer hover:underline" href="{{ url('/') }}">
                 Home
