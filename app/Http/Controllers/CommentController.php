@@ -6,6 +6,8 @@ use App\Models\Comment;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 
+use Auth;
+
 class CommentController extends Controller
 {
     public function store(Request $request, Comic $comic)
@@ -18,6 +20,7 @@ class CommentController extends Controller
         Comment::create([
             'comic_id' => $comic->id,
             'content' => $request->content,
+            'user_id' => Auth::user()->id,
         ]);
 
         // Increment comment count in the `comics` table

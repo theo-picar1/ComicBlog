@@ -14,7 +14,7 @@ class ComicController extends Controller
         return view('index', compact('comics'));
     }
     public function show($id) {
-        $comic = Comic::findOrFail($id);
+        $comic = Comic::with('comments.user')->findOrFail($id);
         return view('comics.show', compact('comic'));
     }
 

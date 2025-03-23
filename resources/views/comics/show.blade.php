@@ -19,9 +19,10 @@
                         <div class="comment-section">
                             @foreach ($comic->comments as $comment)
                                 <div class="user-comment">
-                                    <img class="w-8 h-auto" src="{{ asset('images/user-icon.png') }}"/>
+                                    <img class="w-10 h-10 rounded-full border border-black" src="{{ asset('storage/' . ($comment->user->profile_picture ?? 'images/user-icon.png')) }}"/>
+
                                     <div class="right-section w-auto">
-                                        <p class="text-xs font-bold inline">@username</p>
+                                        <p class="text-xs font-bold inline">&commat;{{ $comment->user->username ?? 'user' }}</p>
                                         <span class="text-xs">{{ $comment->created_at }}</span>
                                         <p class="mt-2 text-s">{{ $comment->content }}</p>
                                         <div class="like-dislike-section mt-2">
