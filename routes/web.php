@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ComicController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,10 +28,8 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 
 Auth::routes();
 
-// Reference: ChatGPT
-Route::get('/profile/{user}', function () {
-    return view('auth.edit', ['user' => Auth::user()]);
-})->middleware('auth')->name('profile');
+Route::get('profile/{user}', [AuthController::class, 'edit'])->name('edit');
+Route::put('profile/{user}', [AuthController::class, 'update'])->name('update');
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

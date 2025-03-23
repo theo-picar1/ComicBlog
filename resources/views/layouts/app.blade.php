@@ -42,7 +42,7 @@
                             {{ csrf_field() }}
                         </form> --}}
 
-                        <a href="{{ route('profile', Auth::user()->id ) }}">Edit Profile</a>
+                        <a href="{{ route('edit', Auth::user()->id ) }}">Edit Profile</a>
                     @endguest
                 </nav>
             </div>
