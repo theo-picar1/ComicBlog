@@ -27,6 +27,11 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 
 Auth::routes();
 
+// Reference: ChatGPT
+Route::get('/profile/{user}', function () {
+    return view('auth.show', ['user' => Auth::user()]);
+})->middleware('auth')->name('profile');
+
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', [ComicController::class, 'index'])->name('comics.index');
