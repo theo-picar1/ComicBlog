@@ -11,7 +11,6 @@ class ComicController extends Controller
         // Fetch all comics from the database
         $comics = Comic::all();
 
-        // Pass the comics data to the 'index' view
         return view('index', compact('comics'));
     }
     public function show($id) {

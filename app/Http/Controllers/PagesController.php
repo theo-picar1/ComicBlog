@@ -15,4 +15,12 @@ class PagesController extends Controller
     {
         return view('comics.create');
     }
+
+    public function about() {
+        return view('layouts.about');
+    }
+
+    public function contact() {
+        return view('layouts.contact');
+    }
 }

@@ -20,18 +20,18 @@ use App\Http\Controllers\Auth\AuthController;
 
 Route::get('/', [PagesController::class, 'index']);
 
-Route::resource('/blog', PostsController::class);
-
-Auth::routes();
-
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
+// Basic pages routes
+Route::get('/about', [PagesController::class,'about'])->name('layouts.about');
+Route::get('/contact', [PagesController::class,'contact'])->name('layouts.contact');
+
+// Edit profile view routes
 Route::get('profile/{user}', [AuthController::class, 'edit'])->name('edit');
 Route::put('profile/{user}', [AuthController::class, 'update'])->name('update');
 
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', [ComicController::class, 'index'])->name('comics.index');
 Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');

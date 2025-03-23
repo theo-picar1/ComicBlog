@@ -13,21 +13,21 @@
 
     <div class="home-navbar bg-gray-800 text-white font-bold text-xl flex flex-row items-center justify-between px-16 py-8">
         <div class="flex flex-row items-center gap-8">
-            <p class="cursor-pointer hover:underline">
+            <a class="cursor-pointer hover:underline" href="{{ url('/') }}">
                 Home
-            </p>
+            </a>
             /
-            <p class="cursor-pointer hover:underline">
+            <a class="cursor-pointer hover:underline" href="{{ route('layouts.about') }}">
                 About
-            </p>
+            </a>
             /
-            <p class="cursor-pointer hover:underline">
+            <a class="cursor-pointer hover:underline" href="{{ route('layouts.contact') }}">
                 Contact Us
-            </p>
+            </a>
             /
-            <p class="cursor-pointer hover:underline">
+            <a class="cursor-pointer hover:underline" href="{{ Auth::check() ? route('edit', Auth::user()->id) : route('login') }}">
                 View Profile
-            </p>
+            </a>
 
         </div>
 
