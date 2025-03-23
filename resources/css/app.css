@@ -27,13 +27,14 @@
     gap: 10px;
 }
 
-.comic-gallery-section .create-post-button:hover {
-    cursor: pointer;
-    background-color: white;
+.comic-gallery-section .create-post-button {
+    transition: all 0.3s ease;
 }
 
 .comic-gallery-section .create-post-button:hover {
-    background-color: rgb(225, 225, 225);
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.719);
+    transform: translateY(-3px);
 }
 
 .comic-gallery {
@@ -90,26 +91,6 @@
     cursor: pointer;
     text-decoration: underline;
     transform: translateY(-2px);
-}
-
-.comic-gallery .comic-container .comic-footer {
-    background-color: rgb(231, 230, 230);
-    padding: 18px;
-    color: red;
-    margin-top: 20px;
-}
-
-.comic-gallery .comic-container .comic-footer .comments {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    font-weight: bold;
-}
-
-.comic-gallery .comic-container .comic-footer .comments img {
-    width: 18px;
-    height: auto;
 }
 
 /* VIEW COMIC PAGE */

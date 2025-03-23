@@ -48,10 +48,12 @@
                         </div>
                         @guest 
                             <div class="submit-button-container py-4 px-3 border-solid border-r border-b border-l border-black">
-                                <button>Send Comment</button>
+                                <p>You must be logged in to comment!</p>
                             </div>
                         @else 
-                            <p>You must be logged in to comment!</p>
+                        <div class="submit-button-container py-4 px-3 border-solid border-r border-b border-l border-black">
+                            <button>Send Comment</button>
+                        </div>
                         @endguest
                     </form>
                 </div>
