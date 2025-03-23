@@ -13,6 +13,22 @@
     height: 600px;
 }
 
+.home-navbar div p {
+    transition: transform 0.3s ease;
+}
+
+.home-navbar div p:hover {
+    transform: translateY(-3px);
+}
+
+.home-navbar .searchbar img {
+    transition: transform 0.3s ease;
+}
+
+.home-navbar .searchbar img:hover {
+    transform: translateY(-3px);
+}
+
 .home-content {
     background-color: lightblue;
     padding-bottom: 30px;
