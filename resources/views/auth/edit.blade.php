@@ -33,21 +33,24 @@
         <div class="w-full">
             <h1 class="text-4xl font-bold">Account Settings</h1>
 
-            <div class="mt-9">
-                <p class="font-semibold">Email</p>
-                <input type="text" class="border border-gray rounded-md w-full mt-2 p-2" value="{{ $user->email }}">
-            </div>
-            <div class="font-semibold mt-4">
-                <p>Full Name</p>
-                <input type="text" class="border border-gray rounded-md w-full mt-2 p-2" value="{{ $user->name }}">
-            </div>
-            <div class="font-semibold mt-4">
-                <p>Telephone No.</p>
-                <input type="text" class="border border-gray rounded-md w-full mt-2 p-2"
-                    placeholder="Enter your telephone number here">
-            </div>
+            <form>
+                <div class="mt-9">
+                    <p class="font-semibold">Email</p>
+                    <input type="text" class="border border-gray rounded-md w-full mt-2 p-2" value="{{ $user->email }}">
+                </div>
+                <div class="font-semibold mt-4">
+                    <p>Full Name</p>
+                    <input type="text" class="border border-gray rounded-md w-full mt-2 p-2"
+                        value="{{ $user->name }}">
+                </div>
+                <div class="font-semibold mt-4">
+                    <p>Telephone No.</p>
+                    <input type="text" class="border border-gray rounded-md w-full mt-2 p-2"
+                        placeholder="Enter your telephone number here">
+                </div>
 
-            <button class="bg-red-600 text-white font-bold text-xl rounded-md px-6 py-3 mt-4 m-auto">SUBMIT</button>
+                <button class="bg-red-600 text-white font-bold text-xl rounded-md px-6 py-3 mt-4 m-auto">SUBMIT</button>
         </div>
+        </form>
     </div>
 @endsection

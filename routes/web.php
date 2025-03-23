@@ -29,7 +29,7 @@ Auth::routes();
 
 // Reference: ChatGPT
 Route::get('/profile/{user}', function () {
-    return view('auth.show', ['user' => Auth::user()]);
+    return view('auth.edit', ['user' => Auth::user()]);
 })->middleware('auth')->name('profile');
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
